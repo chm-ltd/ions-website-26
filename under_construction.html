@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christopher Myhill | Site Under Construction</title>
+  <meta name="description" content="Christopher Myhill – Church Organist, Teacher, Choral Director. This site is under construction.">
+  <meta name="theme-color" content="#200208">
+
+  <!-- Google Fonts: Cinzel, Cormorant Garamond & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #120104;
+      --bg-wine: #200208;
+      --bg-wine-center: #35050e;
+      --gold-light: #fae4b2;
+      --gold-primary: #deb667;
+      --gold-dark: #b88d3b;
+      --gold-border: rgba(222, 182, 103, 0.35);
+      --gold-glow: rgba(222, 182, 103, 0.2);
+      --text-cream: #f6eedb;
+      --text-muted: #c9b9a6;
+      --font-title: 'Cinzel', serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(ellipse at 50% 35%, var(--bg-wine-center) 0%, var(--bg-wine) 55%, var(--bg-dark) 100%);
+      color: var(--text-cream);
+      font-family: var(--font-sans);
+      padding: 40px 20px;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: radial-gradient(rgba(222, 182, 103, 0.04) 1px, transparent 0);
+      background-size: 20px 20px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .landing-card {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      width: 100%;
+      background: rgba(28, 2, 7, 0.72);
+      border: 1px solid var(--gold-border);
+      border-radius: 6px;
+      padding: 50px 36px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 40px var(--gold-glow);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-wrap {
+      margin: 0 auto 28px;
+      display: inline-block;
+      max-width: 620px;
+      width: 100%;
+    }
+
+    .logo-img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid var(--gold-border);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+    }
+
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin: 24px auto 28px;
+      max-width: 440px;
+    }
+
+    .ornament-divider::before,
+    .ornament-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+    }
+
+    .ornament-cross {
+      color: var(--gold-primary);
+      font-size: 1.15rem;
+    }
+
+    .status-badge {
+      display: inline-block;
+      font-family: var(--font-title);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      background: rgba(222, 182, 103, 0.12);
+      border: 1px solid var(--gold-border);
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
+
+    .message-headline {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+      line-height: 1.25;
+    }
+
+    .message-subtext {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: var(--text-cream);
+      max-width: 640px;
+      margin: 0 auto 30px;
+      font-style: italic;
+    }
+
+    .contact-box {
+      background: rgba(14, 1, 4, 0.8);
+      border: 1px solid var(--gold-border);
+      border-radius: 4px;
+      padding: 24px 28px;
+      max-width: 620px;
+      margin: 0 auto 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1.05rem;
+      color: var(--text-cream);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      word-break: break-all;
+    }
+
+    .contact-item:hover {
+      color: var(--gold-light);
+      transform: translateX(4px);
+    }
+
+    .contact-item span.icon {
+      color: var(--gold-primary);
+      font-size: 1.3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: rgba(222, 182, 103, 0.1);
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .contact-item strong {
+      color: var(--gold-light);
+      font-weight: 500;
+      margin-right: 6px;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #1a0106;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 2px;
+      box-shadow: 0 4px 18px rgba(222, 182, 103, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 26px rgba(222, 182, 103, 0.5);
+      filter: brightness(1.08);
+    }
+
+    .btn-outline-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--gold-primary);
+      background: transparent;
+      border: 1px solid var(--gold-primary);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-gold:hover {
+      background: rgba(222, 182, 103, 0.1);
+      color: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    .footer-note {
+      position: relative;
+      z-index: 2;
+      margin-top: 30px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 640px) {
+      .landing-card {
+        padding: 34px 18px;
+      }
+      .message-headline {
+        font-size: 1.55rem;
+      }
+      .message-subtext {
+        font-size: 1.15rem;
+      }
+      .contact-item {
+        font-size: 0.95rem;
+      }
+      .btn-row {
+        flex-direction: column;
+      }
+      .btn-gold, .btn-outline-gold {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="landing-card">
+    
+    <div class="logo-wrap">
+      <img src="CHM-LTD Logo.jpg" alt="Christopher Myhill - Church Organist, Teacher, Choral Director" class="logo-img">
+    </div>
+
+    <div class="status-badge">Notice</div>
+
+    <h1 class="message-headline">This site is under construction</h1>
+
+    <div class="ornament-divider">
+      <span class="ornament-cross">&#10016;</span>
+    </div>
+
+    <p class="message-subtext">
+      For more information please contact me by email or telephone:
+    </p>
+
+    <div class="contact-box">
+      <!-- Corrected Email -->
+      <a href="mailto:enquiries@chm-ltd.cu.uk" class="contact-item">
+        <span class="icon">&#9993;</span>
+        <span><strong>Email:</strong> enquiries@chm-ltd.cu.uk</span>
+      </a>
+
+      <!-- Telephone -->
+      <a href="tel:07519633013" class="contact-item">
+        <span class="icon">&#9742;</span>
+        <span><strong>Telephone:</strong> 07519 633013</span>
+      </a>
+    </div>
+
+    <div class="btn-row">
+      <a href="mailto:enquiries@chm-ltd.cu.uk?subject=Website%20Enquiry" class="btn-gold">
+        <span>&#9993;</span> Email Me
+      </a>
+      <a href="tel:07519633013" class="btn-outline-gold">
+        <span>&#9742;</span> Call 07519 633013
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer-note">
+    &copy; Christopher Myhill. All rights reserved.
+  </footer>
+
+</body>
+</html>
