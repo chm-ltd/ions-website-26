@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christopher Myhill | Church Organist, Teacher & Choral Director</title>
+  <meta name="description" content="Professional liturgical organist, choral director, and organ teacher. Sacred cathedral music, wedding accompaniments, memorial services, and organ tuition.">
+  <meta name="theme-color" content="#200208">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       THEME VARIABLES & RESET
+       ========================================================================== */
+    :root {
+      --bg-dark: #170105;
+      --bg-burgundy: #200208;
+      --bg-burgundy-alt: #2c040d;
+      --bg-card: rgba(44, 4, 13, 0.75);
+      --gold-light: #fbe3ad;
+      --gold-primary: #deb667;
+      --gold-dark: #b88d3b;
+      --gold-border: rgba(222, 182, 103, 0.35);
+      --gold-glow: rgba(222, 182, 103, 0.2);
+      --text-cream: #f6eedb;
+      --text-dim: #c7b9a5;
+      --font-heading: 'Cinzel', serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-cream);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.6;
+      background: radial-gradient(circle at 50% 10%, #2f040d 0%, var(--bg-burgundy) 55%, var(--bg-dark) 100%);
+      min-height: 100vh;
+    }
+
+    /* Subtle Damask/Linen Texture Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: radial-gradient(rgba(222, 182, 103, 0.03) 1px, transparent 0);
+      background-size: 24px 24px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 90px 0;
+      position: relative;
+      border-bottom: 1px solid var(--gold-border);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+    }
+
+    .section-badge img {
+      height: 28px;
+      width: auto;
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .section-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--text-dim);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Divider Accent */
+    .gold-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 20px auto 0;
+    }
+    .gold-divider::before, .gold-divider::after {
+      content: "";
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+    }
+    .gold-divider span {
+      color: var(--gold-primary);
+      font-size: 14px;
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(23, 1, 5, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gold-border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo-img {
+      height: 56px;
+      width: auto;
+      border-radius: 3px;
+      border: 1px solid var(--gold-border);
+    }
+
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--gold-primary);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-dim);
+      transition: var(--transition);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: var(--gold-primary);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      padding: 10px 22px;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #1a0106;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 2px;
+      box-shadow: 0 4px 15px rgba(222, 182, 103, 0.25);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(222, 182, 103, 0.45);
+      filter: brightness(1.08);
+    }
+
+    .btn-outline-gold {
+      display: inline-block;
+      padding: 10px 22px;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      background: transparent;
+      border: 1px solid var(--gold-primary);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-outline-gold:hover {
+      background: rgba(222, 182, 103, 0.1);
+      color: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--gold-border);
+      color: var(--gold-primary);
+      font-size: 1.5rem;
+      padding: 6px 12px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       HERO SECTION (HOME / INTRODUCTION)
+       ========================================================================== */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-crest-wrap {
+      margin: 0 auto 32px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .hero-crest-img {
+      max-width: 520px;
+      width: 90vw;
+      border-radius: 6px;
+      border: 1px solid var(--gold-border);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 30px rgba(222, 182, 103, 0.15);
+      transition: var(--transition);
+    }
+
+    .hero-crest-img:hover {
+      box-shadow: 0 24px 70px rgba(0,0,0,0.9), 0 0 45px rgba(222, 182, 103, 0.3);
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-style: italic;
+      color: var(--text-cream);
+      max-width: 800px;
+      margin: 0 auto 28px;
+      line-height: 1.4;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    /* Sound Synthesizer Audition Pill */
+    .sound-audition-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(32, 2, 8, 0.85);
+      border: 1px solid var(--gold-border);
+      padding: 10px 20px;
+      border-radius: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .sound-audition-bar span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .sound-btn {
+      background: rgba(222, 182, 103, 0.15);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      padding: 4px 12px;
+      font-size: 0.72rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .sound-btn:hover {
+      background: var(--gold-primary);
+      color: #1a0106;
+    }
+
+    /* ==========================================================================
+       ABOUT SECTION
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      padding: 40px;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .about-card p {
+      margin-bottom: 18px;
+      color: var(--text-dim);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .about-card p strong {
+      color: var(--gold-light);
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .pillar-box {
+      background: rgba(20, 1, 5, 0.6);
+      border: 1px solid var(--gold-border);
+      padding: 24px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .pillar-box h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .pillar-box p {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    /* ==========================================================================
+       SERVICES SECTION
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: 4px;
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-primary);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.7), 0 0 25px rgba(222, 182, 103, 0.15);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      color: var(--gold-primary);
+      margin-bottom: 16px;
+    }
+
+    .service-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    .service-desc {
+      color: var(--text-dim);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .service-tag {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold-primary);
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       REPERTOIRE SECTION (FILTERABLE)
+       ========================================================================== */
+    .rep-filter-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .filter-btn {
+      background: rgba(32, 2, 8, 0.6);
+      border: 1px solid var(--gold-border);
+      color: var(--text-dim);
+      padding: 8px 18px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--gold-primary);
+      color: #1a0106;
+      border-color: var(--gold-primary);
+      font-weight: 600;
+    }
+
+    .rep-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    .rep-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .rep-table th {
+      background: rgba(15, 1, 4, 0.9);
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--gold-border);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .rep-table td {
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(222, 182, 103, 0.15);
+      font-size: 0.92rem;
+      color: var(--text-cream);
+    }
+
+    .rep-table tr:hover td {
+      background: rgba(222, 182, 103, 0.05);
+    }
+
+    .badge-category {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold-border);
+      border-radius: 2px;
+      color: var(--gold-light);
+    }
+
+    /* ==========================================================================
+       GALLERY SECTION (WITH LIGHTBOX)
+       ========================================================================== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      height: 280px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--gold-border);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0; left: 0; width: 100%;
+      background: linear-gradient(0deg, rgba(23,1,5,0.95) 0%, transparent 100%);
+      padding: 30px 18px 16px;
+      color: var(--gold-light);
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      transform: translateY(10px);
+      opacity: 0.9;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10, 0, 2, 0.95);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 900px;
+      max-height: 80vh;
+      border: 2px solid var(--gold-primary);
+      border-radius: 4px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      font-size: 2.5rem;
+      color: var(--gold-light);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       TESTIMONIALS SECTION
+       ========================================================================== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      padding: 32px;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .testi-quote {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-cream);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .testi-quote::before {
+      content: '“';
+      font-size: 3rem;
+      color: var(--gold-primary);
+      display: block;
+      line-height: 1;
+      margin-bottom: -15px;
+      opacity: 0.5;
+    }
+
+    .testi-author {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+    }
+
+    .testi-role {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    /* ==========================================================================
+       CONTACT / BOOKING SECTION
+       ========================================================================== */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: 4px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+
+    .contact-info h3 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      color: var(--text-dim);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      color: var(--text-cream);
+    }
+
+    .contact-item span.icon {
+      color: var(--gold-primary);
+      font-size: 1.2rem;
+      width: 24px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    .form-control {
+      background: rgba(15, 1, 4, 0.8);
+      border: 1px solid var(--gold-border);
+      border-radius: 2px;
+      padding: 12px 16px;
+      color: var(--text-cream);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 10px rgba(222, 182, 103, 0.3);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background: #0f0103;
+      border-top: 1px solid var(--gold-border);
+      padding: 50px 0 30px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      height: 70px;
+      margin: 0 auto 20px;
+      border-radius: 3px;
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      margin-top: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .services-grid, .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .about-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-burgundy);
+        border-bottom: 1px solid var(--gold-border);
+        padding: 24px;
+        gap: 16px;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .services-grid, .testimonials-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .about-pillars {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION HEADER
+       ========================================================================== -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#home" class="brand-link">
+        <img src="image_52e43c.png" alt="Christopher Myhill Logo" class="brand-logo-img">
+        <div class="brand-text-block">
+          <span class="brand-name">Christopher Myhill</span>
+          <span class="brand-title">Church Organist &bull; Teacher &bull; Choral Director</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">&#9776;</button>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#repertoire" class="nav-link">Repertoire</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#contact" class="btn-gold">Enquire</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HOME / HERO SECTION
+       ========================================================================== -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-crest-wrap">
+        <img src="image_52e43c.png" alt="Christopher Myhill Emblem" class="hero-crest-img">
+      </div>
+
+      <p class="hero-tagline">
+        “Sacred Grandeur, Liturgical Reverence, and Expressive Mastery across Britain’s Greatest Historic Pipe Organs.”
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-gold">Book a Service or Lesson</a>
+        <a href="#repertoire" class="btn-outline-gold">Explore Repertoire</a>
+      </div>
+
+      <!-- Pipe Organ Sound Audition (Web Audio API Synthesizer) -->
+      <div class="sound-audition-bar">
+        <span>Audition Stop Harmonics:</span>
+        <button class="sound-btn" onclick="playOrganChord([146.83, 220.00, 293.66, 369.99, 440.00])">Grand Ch&oelig;ur</button>
+        <button class="sound-btn" onclick="playOrganChord([146.83, 220.00, 349.23, 440.00])">Toccata in Dm</button>
+        <button class="sound-btn" onclick="playOrganChord([261.63, 329.63, 392.00, 523.25])">Voix C&eacute;leste</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT SECTION
+       ========================================================================== */
+  -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <img src="image_52e43c.png" alt="Icon">
+          <span>Biography &bull; Heritage</span>
+        </div>
+        <h2 class="section-title">A Life Dedicated to Sacred Sound</h2>
+        <div class="gold-divider"><span>&#10016;</span></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <p>
+            With decades of experience seated at the console of fine cathedral, collegiate, and parish instruments, <strong>Christopher Myhill</strong> brings musical sensitivity and liturgical understanding to every occasion.
+          </p>
+          <p>
+            Formed in the distinguished English cathedral choral tradition, his musicianship balances technical precision with deep reverence. Whether guiding a choir through Renaissance polyphony, leading congregations in traditional hymnody, or inspiring private students, Christopher's mission is to keep the majesty of sacred organ repertoire alive.
+          </p>
+          <p>
+            Holding advanced diplomas in organ performance and choral conducting, Christopher is a Fellow of the Royal College of Organists (FRCO) and regular guest recitalist throughout the United Kingdom.
+          </p>
+        </div>
+
+        <div class="about-pillars">
+          <div class="pillar-box">
+            <h4>Liturgical Nuance</h4>
+            <p>Expert psalm accompaniment, sensitive communion voluntaries, and majestic service dismissals.</p>
+          </div>
+          <div class="pillar-box">
+            <h4>Pedagogical Rigour</h4>
+            <p>Individualized pedal and manual instruction tailored to beginners and advanced diploma candidates.</p>
+          </div>
+          <div class="pillar-box">
+            <h4>Choral Mastery</h4>
+            <p>Vocal blend cultivation, diction clarity, and comprehensive sacred choral repertoire conducting.</p>
+          </div>
+          <div class="pillar-box">
+            <h4>Historic Organs</h4>
+            <p>Extensive experience mastering mechanical tracker, pneumatic, and electric console actions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SERVICES SECTION
+       ========================================================================== -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <img src="image_52e43c.png" alt="Icon">
+          <span>Musical Engagements</span>
+        </div>
+        <h2 class="section-title">Professional Services</h2>
+        <p class="section-subtitle">Delivering ceremonial dignity and artistic excellence for churches, choirs, and scholars.</p>
+        <div class="gold-divider"><span>&#10016;</span></div>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon">&#9835;</div>
+            <h3 class="service-title">Liturgical Services</h3>
+            <p class="service-desc">
+              Resident and deputising accompanist for Sunday Choral Eucharist, Solemn Evensong, Mattins, and festive feast days across traditional and contemporary rites.
+            </p>
+          </div>
+          <div class="service-tag">Cathedral &bull; Parish &bull; Chapel</div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon">&#10084;</div>
+            <h3 class="service-title">Weddings & Ceremonies</h3>
+            <p class="service-desc">
+              Tailored musical consultation, bridal processional marches, celebratory hymn leadership, and exhilarating festive recessional fanfares.
+            </p>
+          </div>
+          <div class="service-tag">Bespoke Consultations Included</div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon">&#10016;</div>
+            <h3 class="service-title">Funerals & Memorials</h3>
+            <p class="service-desc">
+              Dignified, sensitive voluntaries and support for families during times of remembrance, honouring loved ones through reflective and sacred pieces.
+            </p>
+          </div>
+          <div class="service-tag">Compassionate & Accommodating</div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon">&#127926;</div>
+            <h3 class="service-title">Choral Direction</h3>
+            <p class="service-desc">
+              Guest direction, choir development, vocal coaching, and festival preparation for mixed, treble, and chamber church choirs.
+            </p>
+          </div>
+          <div class="service-tag">Renaissance to Contemporary</div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon">&#128218;</div>
+            <h3 class="service-title">Organ Tuition</h3>
+            <p class="service-desc">
+              Comprehensive private instruction in organ technique, pedal proficiency, hymn playing, registration art, and ABRSM / ARCO / FRCO preparation.
+            </p>
+          </div>
+          <div class="service-tag">All Ages &bull; Beginner to Advanced</div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon">&#127914;</div>
+            <h3 class="service-title">Recitals & Masterclasses</h3>
+            <p class="service-desc">
+              Solo organ concerts featuring virtuosic masterworks by Bach, Franck, Widor, and Vierne, with insightful spoken commentary for audiences.
+            </p>
+          </div>
+          <div class="service-tag">Festival & Concert Series</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       REPERTOIRE SECTION
+       ========================================================================== -->
+  <section id="repertoire">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <img src="image_52e43c.png" alt="Icon">
+          <span>Catalog & Programmes</span>
+        </div>
+        <h2 class="section-title">Selected Repertoire</h2>
+        <p class="section-subtitle">A diverse catalogue spanning four centuries of sacred and concert organ masterworks.</p>
+        <div class="gold-divider"><span>&#10016;</span></div>
+      </div>
+
+      <!-- Filters -->
+      <div class="rep-filter-nav">
+        <button class="filter-btn active" onclick="filterRep('all', this)">All Works</button>
+        <button class="filter-btn" onclick="filterRep('Baroque', this)">Baroque</button>
+        <button class="filter-btn" onclick="filterRep('Romantic', this)">French Romantic</button>
+        <button class="filter-btn" onclick="filterRep('English', this)">English Cathedral</button>
+        <button class="filter-btn" onclick="filterRep('Ceremonial', this)">Ceremonial / Wedding</button>
+      </div>
+
+      <div class="rep-table-wrap">
+        <table class="rep-table" id="repTable">
+          <thead>
+            <tr>
+              <th>Work / Piece</th>
+              <th>Composer</th>
+              <th>Category</th>
+              <th>Occasion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-cat="Baroque">
+              <td><strong>Toccata & Fugue in D Minor (BWV 565)</strong></td>
+              <td>J.S. Bach</td>
+              <td><span class="badge-category">Baroque</span></td>
+              <td>Recitals / Concerts</td>
+            </tr>
+            <tr data-cat="Romantic">
+              <td><strong>Toccata from Symphony No. 5</strong></td>
+              <td>Charles-Marie Widor</td>
+              <td><span class="badge-category">Romantic</span></td>
+              <td>Wedding Recessional / Easter</td>
+            </tr>
+            <tr data-cat="English">
+              <td><strong>Master Tallis's Testament</strong></td>
+              <td>Herbert Howells</td>
+              <td><span class="badge-category">English</span></td>
+              <td>Evensong / Reflective</td>
+            </tr>
+            <tr data-cat="Ceremonial">
+              <td><strong>Bridal Chorus (Lohengrin)</strong></td>
+              <td>Richard Wagner</td>
+              <td><span class="badge-category">Ceremonial</span></td>
+              <td>Wedding Processional</td>
+            </tr>
+            <tr data-cat="Baroque">
+              <td><strong>Passacaglia and Fugue in C Minor (BWV 582)</strong></td>
+              <td>J.S. Bach</td>
+              <td><span class="badge-category">Baroque</span></td>
+              <td>Solemn Feast Days</td>
+            </tr>
+            <tr data-cat="Romantic">
+              <td><strong>Final (Symphonie No. 1, Op. 14)</strong></td>
+              <td>Louis Vierne</td>
+              <td><span class="badge-category">Romantic</span></td>
+              <td>Festive Voluntary</td>
+            </tr>
+            <tr data-cat="English">
+              <td><strong>Choral Song and Fugue</strong></td>
+              <td>Samuel Sebastian Wesley</td>
+              <td><span class="badge-category">English</span></td>
+              <td>Cathedral Evensong</td>
+            </tr>
+            <tr data-cat="Ceremonial">
+              <td><strong>Prince of Denmark's March (Trumpet Voluntary)</strong></td>
+              <td>Jeremiah Clarke</td>
+              <td><span class="badge-category">Ceremonial</span></td>
+              <td>Civic / Royal Weddings</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GALLERY SECTION
+       ========================================================================== -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <img src="image_52e43c.png" alt="Icon">
+          <span>Atmosphere & Venues</span>
+        </div>
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">Instruments, consoles, and sacred spaces where music comes to life.</p>
+        <div class="gold-divider"><span>&#10016;</span></div>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1548625361-195fe578cb26?auto=format&fit=crop&w=1200&q=80', 'Gothic Cathedral Nave & Rood Screen')">
+          <img src="https://images.unsplash.com/photo-1548625361-195fe578cb26?auto=format&fit=crop&w=800&q=80" alt="Cathedral Nave">
+          <div class="gallery-overlay">Gothic Cathedral Nave</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1200&q=80', 'Great Grand Pipe Organ Case')">
+          <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=800&q=80" alt="Pipe Organ Case">
+          <div class="gallery-overlay">Cathedral Pipe Organ Case</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80', 'Organ Console Manuals & Stops')">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Manuals and Drawstops">
+          <div class="gallery-overlay">Organ Console & Stops</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="Enlarged view" class="lightbox-content" id="lightboxImg">
+  </div>
+
+  <!-- ==========================================================================
+       TESTIMONIALS SECTION
+       ========================================================================== -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <img src="image_52e43c.png" alt="Icon">
+          <span>Endorsements</span>
+        </div>
+        <h2 class="section-title">Commendations</h2>
+        <div class="gold-divider"><span>&#10016;</span></div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testi-card">
+          <p class="testi-quote">
+            Christopher played for our wedding and his rendition of Widor’s Toccata left every guest in absolute awe. His guidance in selecting our hymns made the ceremony effortless.
+          </p>
+          <div class="testi-author">Eleanor & James Thornton</div>
+          <div class="testi-role">Wedding Service, Holy Trinity Church</div>
+        </div>
+
+        <div class="testi-card">
+          <p class="testi-quote">
+            A musician of the highest integrity. Christopher’s sensitive hymn playing and command of choral accompaniment brought our patronal festival to life with true cathedral grandeur.
+          </p>
+          <div class="testi-author">The Reverend Canon D. Campbell</div>
+          <div class="testi-role">Parish Rector</div>
+        </div>
+
+        <div class="testi-card">
+          <p class="testi-quote">
+            Under Christopher's patient and expert tuition, I went from struggling with basic pedal technique to achieving my ARCO with honours. He is a truly gifted teacher.
+          </p>
+          <div class="testi-author">Benjamin Davies</div>
+          <div class="testi-role">Organ Scholar & Student</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT / BOOKINGS SECTION
+       ========================================================================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <img src="image_52e43c.png" alt="Icon">
+          <span>Availability & Enquiries</span>
+        </div>
+        <h2 class="section-title">Contact Christopher</h2>
+        <p class="section-subtitle">Inquire regarding service dates, choral workshops, weddings, or private organ tuition.</p>
+        <div class="gold-divider"><span>&#10016;</span></div>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3>Let Us Make Sacred Music</h3>
+          <p>
+            Christopher travels across the UK for recitals, masterclasses, and services. Advance booking is recommended for peak wedding and festival periods.
+          </p>
+          <div class="contact-item">
+            <span class="icon">&#9993;</span>
+            <span>contact@christophermyhill.co.uk</span>
+          </div>
+          <div class="contact-item">
+            <span class="icon">&#9742;</span>
+            <span>+44 (0) 7700 900543</span>
+          </div>
+          <div class="contact-item">
+            <span class="icon">&#128205;</span>
+            <span>United Kingdom (Available Nationwide)</span>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your enquiry. Christopher will reply promptly.');">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" class="form-control" placeholder="e.g. Eleanor Vance" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="serviceSelect">Service Required</label>
+            <select id="serviceSelect" class="form-control">
+              <option>Church Service / Deputising</option>
+              <option>Wedding Service</option>
+              <option>Funeral / Memorial Service</option>
+              <option>Private Organ Tuition</option>
+              <option>Choral Workshop / Direction</option>
+              <option>Solo Organ Recital</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Details & Dates</label>
+            <textarea id="message" class="form-control" rows="4" placeholder="Specify date, venue church, and details..." required></textarea>
+          </div>
+          <button type="submit" class="btn-gold" style="align-self: flex-start;">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <img src="image_52e43c.png" alt="Christopher Myhill Logo" class="footer-logo">
+      <p style="font-family: var(--font-heading); color: var(--gold-primary); font-size: 1.1rem; letter-spacing: 0.1em;">
+        CHRISTOPHER MYHILL
+      </p>
+      <p style="font-family: var(--font-serif); font-style: italic; color: var(--text-dim); margin-top: 4px;">
+        Church Organist &bull; Teacher &bull; Choral Director
+      </p>
+      <div class="gold-divider"><span>&#10016;</span></div>
+      <p class="footer-copy">
+        &copy; 2026 Christopher Myhill. All rights reserved. Registered Church Musician.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT: MENU, REPERTOIRE FILTER, LIGHTBOX & ORGAN SYNTHESIZER
+       ========================================================================== -->
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => navMenu.classList.remove('active'));
+    });
+
+    // Repertoire Filter Functionality
+    function filterRep(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const rows = document.querySelectorAll('#repTable tbody tr');
+      rows.forEach(row => {
+        if (category === 'all' || row.getAttribute('data-cat') === category) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    // Lightbox Functionality
+    function openLightbox(src, caption) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImg');
+      img.src = src;
+      img.alt = caption;
+      lb.classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    // Web Audio API Cathedral Pipe Organ Synthesizer
+    let audioCtx = null;
+
+    function playOrganChord(frequencies) {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      const now = audioCtx.currentTime;
+      const duration = 2.2;
+
+      frequencies.forEach(freq => {
+        // Fundamental & Harmonic Overtones for Pipe Resonance
+        [1, 2, 3].forEach((harmonic, idx) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+
+          osc.type = idx === 0 ? 'sawtooth' : 'sine';
+          osc.frequency.setValueAtTime(freq * harmonic, now);
+
+          // Attack, Decay, Sustain, Release envelope
+          const volume = (idx === 0 ? 0.08 : 0.04) / frequencies.length;
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.exponentialRampToValueAtTime(volume, now + 0.15);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start(now);
+          osc.stop(now + duration);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
